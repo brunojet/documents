@@ -55,8 +55,8 @@ sequenceDiagram
     orch->>store_api: POST /configuracoes-terminal (modelo, tipo integração)
     orch->>store_api: POST /configuracoes-terminal/{id}/mascaras (prefixo número lógico)
     orch->>store_api: POST /aplicativos (nome, referência LDM)
-    orch->>store_api: POST /aplicativos/{id}/configuracoes (aplicativo + configuração terminal + nome pacote android)
-    orch->>store_api: POST /aplicativos/{id}/perfis (nome comercial, desenvolvedor, descrição, categoria, estado: pendente)
+    orch->>store_api: POST /aplicativos/{idAplicativo}/configuracoes (aplicativo + configuração terminal + nome pacote android)
+    orch->>store_api: POST /aplicativos/{idAplicativo}/perfis (nome comercial, desenvolvedor, descrição, categoria, estado: pendente)
     store_api-->>orch: retorna status e URLs pré-assinadas para uploads pendentes
     
     alt Possui pendências de upload
@@ -86,9 +86,9 @@ sequenceDiagram
             
             %% NOVA INTEGRAÇÃO - Orquestrador entra APÓS AS-IS
             p_dev->>orch: notifica aprovação (APK já assinado disponível)
-            orch->>store_api: POST /aplicativos/{id}/versoes (version, apk_url, tamanho_mb, referência LDM)
-            orch->>store_api: PATCH /aplicativos/{id}/versoes/{idVersao}/promover-producao (versão PRIMEIRO)
-            orch->>store_api: PATCH /aplicativos/{id}/perfis/{idPerfil}/promover-producao (perfil DEPOIS)
+            orch->>store_api: POST /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes (version, apk_url, tamanho_mb, referência LDM)
+            orch->>store_api: PATCH /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes/{idVersao}/promover-producao (versão PRIMEIRO)
+            orch->>store_api: PATCH /aplicativos/{idAplicativo}/perfis/{idPerfil}/promover-producao (perfil DEPOIS)
             store_api-->>orch: confirma promoção
             orch-->>p_dev: confirma atualização
         end
@@ -215,7 +215,7 @@ POST /aplicativos/{idAplicativo}/configuracoes:
   - nome_pacote_android: "com.facebook.katana"
 
 # 5. Perfil comercial
-POST /aplicativos/{id}/perfis:
+POST /aplicativos/{idAplicativo}/perfis:
   - nome_comercial: "Facebook Business"
   - desenvolvedor: "Meta Inc"
   - descricao: "App para gestão comercial"
@@ -234,18 +234,18 @@ Loop para cada item pendente:
 
 **📋 Fase 2 - Certificação (SÓ se aprovado):**
 ```yaml
-POST /aplicativos/{id}/versoes:
+POST /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes:
   - version: "1.0.0"
   - apk_url: "https://storage.../facebook-v1.0.0-signed.apk"
   - tamanho_mb: 25
   - referencia_ldm: "ldm_version_456"
 
 # ORDEM CORRETA: Versão ANTES Perfil
-PATCH /aplicativos/{id}/versoes/{idVersao}/promover-producao:
+PATCH /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes/{idVersao}/promover-producao:
   - estado: "producao"
   - versão disponível para download (mas não visível)
 
-PATCH /aplicativos/{id}/perfis/{idPerfil}/promover-producao:
+PATCH /aplicativos/{idAplicativo}/perfis/{idPerfil}/promover-producao:
   - estado: "revisao" → "producao"  
   - perfil fica visível na vitrine (versão já pronta)
 ```
@@ -266,13 +266,13 @@ PATCH /aplicativos/{id}/perfis/{idPerfil}/promover-producao:
 | Prefixo número lógico | `mascara.prefixo` | `POST /configuracoes-terminal/{id}/mascaras` |
 | Nome aplicativo | `aplicativo.nome` | `POST /aplicativos` |
 | Referência LDM | `aplicativo.referencia_ldm` | `POST /aplicativos` |
-| Nome pacote Android | `configuracao_app.nome_pacote` | `POST /aplicativos/{id}/configuracoes` |
-| Nome comercial | `perfil.nome_comercial` | `POST /aplicativos/{id}/perfis` |
-| Desenvolvedor | `perfil.desenvolvedor` | `POST /aplicativos/{id}/perfis` |
-| Categoria | `perfil.categoria` | `POST /aplicativos/{id}/perfis` |
-| APK assinado | `versao.apk_url` | `POST /aplicativos/{id}/versoes` |
-| Tamanho APK | `versao.tamanho_mb` | `POST /aplicativos/{id}/versoes` |
-| Referência LDM versão | `versao.referencia_ldm` | `POST /aplicativos/{id}/versoes` |
+| Nome pacote Android | `configuracao_app.nome_pacote` | `POST /aplicativos/{idAplicativo}/configuracoes` |
+| Nome comercial | `perfil.nome_comercial` | `POST /aplicativos/{idAplicativo}/perfis` |
+| Desenvolvedor | `perfil.desenvolvedor` | `POST /aplicativos/{idAplicativo}/perfis` |
+| Categoria | `perfil.categoria` | `POST /aplicativos/{idAplicativo}/perfis` |
+| APK assinado | `versao.apk_url` | `POST /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes` |
+| Tamanho APK | `versao.tamanho_mb` | `POST /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes` |
+| Referência LDM versão | `versao.referencia_ldm` | `POST /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes` |
 
 ---
 
