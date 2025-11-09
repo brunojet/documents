@@ -418,7 +418,7 @@ Yellow flags para investigação:
 
 ```yaml
 Pré-requisitos (1-2 semanas):
-- Backend novo alimentado via proposta-transicao.md ✅
+- Backend novo alimentado via 01-proposta-inicial-transicao.md ✅
 - Dados sincronizados e validados ✅
 - Monitoring básico implementado ✅
 
