@@ -2,6 +2,9 @@
 
 Esta proposta define a criação de um backend especializado para a loja de aplicativos, separando responsabilidades e modernizando a arquitetura atual.
 
+## 📋 **Architecture Decision Record (ADR)**
+- **[ADR-001: Backend Loja Especializado](./ADR-001-backend-loja-especializado.md)** - Decisão arquitetural consolidada com contexto, implementação e consequências
+
 ## 🎯 **Objetivo da Proposta**
 Desenvolver um backend focado especificamente na **vitrine e catálogo** da loja de aplicativos, desacoplando essa responsabilidade do ServiceNow e criando uma base técnica para evolução futura da jornada.
 

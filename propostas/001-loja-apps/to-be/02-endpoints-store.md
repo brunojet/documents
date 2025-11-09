@@ -22,17 +22,16 @@ Este documento lista todos os endpoints que a **Loja de Aplicativos** fornece co
 
 ### Gestão de perfis de aplicativo
 - `POST /aplicativos/{id}/perfis` - Cadastra novo perfil de aplicativo e retorna pendencias de upload caso existam (URLs pre-assinadas)
-- `PATCH /aplicativos/{id}/perfis/{idPerfil}/promover-producao` - Atualiza estágio do perfil de aplicativo para produção
+- `GET /aplicativos/{id}/perfis/estagio/{estagio}` - Recupera perfil para estágio específico
 - `GET /aplicativos/{id}/perfis/{idPerfil}` - Recupera perfil de aplicativo por ID
-- `GET /aplicativos/{id}/perfis/producao` - Recupera perfil atual do aplicativo em produção
-- `GET /aplicativos/{id}/perfis/revisao` - Recupera perfil atual do aplicativo em revisão
-- `GET /aplicativos/{id}/perfis/arquivados` - Lista perfis arquivados do aplicativo
+- `PATCH /aplicativos/{id}/perfis/{idPerfil}/promover-producao` - Atualiza estágio do perfil de aplicativo para produção
 
 ### Gestão de versões de aplicativo
-- `POST /aplicativos/{id}/versoes` - Cadastra nova versão de aplicativo (recebe: referencia versão aplicativo LDM, tamanho do aplicativo, outros metadados)
-- `PATCH /aplicativos/{id}/versoes/{idVersao}/promover-piloto` - Atualiza o estado da versão do aplicativo para piloto
-- `PATCH /aplicativos/{id}/versoes/{idVersao}/promover-producao` - Atualiza o estado da versão do aplicativo para produção
-- `GET /aplicativos/{id}/versoes/{idVersao}` - Recupera versão de aplicativo por ID
+- `POST /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes` - Cadastra nova versão de aplicativo para configuração específica (recebe: referencia versão aplicativo LDM, tamanho do aplicativo, outros metadados)
+- `GET /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes/estagio/{estagio}` - Recupera versão de aplicativo por estágio para configuração específica
+- `GET /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes/{idVersao}` - Recupera versão de aplicativo por ID para configuração específica
+- `PATCH /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes/{idVersao}/promover-piloto` - Atualiza o estado da versão do aplicativo para piloto na configuração específica
+- `PATCH /configuracoes-aplicativo/{idAplicativo}/{idConfiguracao}/versoes/{idVersao}/promover-producao` - Atualiza o estado da versão do aplicativo para produção na configuração específica
 
 ## Catálogo de Aplicativos
 
