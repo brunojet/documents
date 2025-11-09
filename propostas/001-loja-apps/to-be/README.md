@@ -64,7 +64,6 @@ Definir claramente o novo ecossistema proposto:
 - **REST semântico**: POST /busca para filtros complexos, GET para recursos específicos  
 - **Performance**: Separação listagem básica vs detalhes completos
 - **Visibilidade controlada**: Apps só visíveis para terminais compatíveis
-- **Visibilidade controlada**: Apps só visíveis para terminais compatíveis
 - **REST semântico**: Uso correto de métodos HTTP para diferentes operações
 
 ## 🚫 O Que NÃO Será Responsabilidade da Loja
