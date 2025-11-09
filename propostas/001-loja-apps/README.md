@@ -1,6 +1,13 @@
-# Documentação do Projeto Store - Estrutura Organizacional
+# Proposta 001: Loja de Aplicativos - Backend Especializado
 
-Este projeto está estruturado em três grandes áreas para melhor organização e compreensão:
+Esta proposta define a criação de um backend especializado para a loja de aplicativos, separando responsabilidades e modernizando a arquitetura atual.
+
+## 🎯 **Objetivo da Proposta**
+Desenvolver um backend focado especificamente na **vitrine e catálogo** da loja de aplicativos, desacoplando essa responsabilidade do ServiceNow e criando uma base técnica para evolução futura da jornada.
+
+## 📊 **Estrutura da Documentação**
+
+Esta proposta está estruturada em três grandes áreas para melhor organização e compreensão:
 
 ## 📁 as-is/
 Documentação do estado atual do sistema. Contém análise completa do sistema legado ServiceNow em produção.
@@ -48,4 +55,5 @@ Esta estrutura facilita:
 
 ---
 *Última atualização: Novembro 2025*
-*Status: Propostas em análise para projeto Store - aguardando validação e aprovação*
+*Status: Proposta 001 aguardando validação e aprovação*
+*Escopo: Backend especializado da loja como ponto de partida evolutivo*
