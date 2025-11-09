@@ -5,7 +5,7 @@
 Este documento define a estratégia para **consumir** o backend novo da loja de aplicativos, implementando migração incremental inteligente com feature flags e validação de valor em cada fase.
 
 > **Diferença fundamental:**
-> - `proposta-transicao.md`: Como **alimentar** o backend (ServiceNow → Backend)  
+> - `01-proposta-inicial-transicao.md`: Como **alimentar** o backend (ServiceNow → Backend)  
 > - Este documento: Como **consumir** o backend (Clientes → Backend)
 
 ---
