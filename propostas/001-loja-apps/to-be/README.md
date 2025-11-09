@@ -58,7 +58,7 @@ Definir claramente o novo ecossistema proposto:
 - **Performance otimizada**: APIs da Loja desenhadas para experiência mobile eficiente
 - **Estados independentes**: Perfis comerciais e versões técnicas com ciclos próprios
 
-## � Fundamentos Técnicos
+## 🔧 Fundamentos Técnicos
 - **Chave composta**: `(aplicativo + configuracao_terminal + estagio)` para precisão contextual
 - **Processamento assíncrono**: Downsizing automático + deduplicação por hash
 - **REST semântico**: POST /busca para filtros complexos, GET para recursos específicos  
