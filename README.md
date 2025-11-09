@@ -1,4 +1,4 @@
-"# Contratos e Propostas Técnicas
+# Contratos e Propostas Técnicas
 
 Este repositório contém todas as propostas técnicas e contratos de sistemas, organizadas de forma estruturada e numerada.
 
