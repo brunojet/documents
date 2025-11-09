@@ -48,4 +48,4 @@ propostas/
 
 ---
 *Última atualização: Novembro 2025*  
-*Repositório: Contratos e Propostas Técnicas*" 
+*Repositório: Contratos e Propostas Técnicas* 
