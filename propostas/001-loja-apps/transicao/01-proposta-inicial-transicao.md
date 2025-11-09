@@ -144,10 +144,10 @@ Ação: manter perfil em revisão (log motivo)
 ```
 
 **Vantagens da Extensão:**
-- � **Zero impacto**: Workflow existente continua funcionando
+- ✅ **Zero impacto**: Workflow existente continua funcionando
 - 🎯 **Pontos precisos**: Injeção apenas onde necessário
-- � **Visibilidade**: Logs no workflow atual
-- �️ **Rollback fácil**: Pode desabilitar activities sem afetar fluxo principal
+- ✅ **Visibilidade**: Logs no workflow atual
+- 🔙 **Rollback fácil**: Pode desabilitar activities sem afetar fluxo principal
 
 ### 2. Nova Loja API (Backend)
 
