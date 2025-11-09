@@ -41,7 +41,7 @@ propostas/
 
 ### Status das Propostas
 - 📋 **Em análise**: Aguardando validação e feedback
-- ✅ **Aprovada**: Validada e pronta para implementação  
+- ✅ **Aprovada**: Validada e pronta para implementação
 - 🔄 **Em implementação**: Desenvolvimento em andamento
 - ✅ **Concluída**: Implementada e em produção
 - ❌ **Rejeitada**: Não aprovada para implementação
